@@ -2,6 +2,7 @@ package com.jie;
 
 import java.util.Random;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.jie.sort.QuickSort;
@@ -29,10 +30,22 @@ public class QuickSortTest {
 				a[y] = m;
 			}
 		}
-		
+
 		print(a);
 		new QuickSort().quickSort(a, 0, a.length - 1);
+		checkResult(sorted, a);
 		print(a);
+	}
+
+	void checkResult(int[] a, int[] b) {
+		try {
+			for (int i = 0; i < a.length; i++) {
+				Assert.assertEquals("Element " + i
+						+ " is not sorted correctly.", a[i], b[i]);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	void print(int[] a) {
