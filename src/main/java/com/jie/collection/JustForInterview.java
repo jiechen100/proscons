@@ -1,4 +1,4 @@
-package com.collection;
+package com.jie.collection;
 
 import java.util.Enumeration;
 import java.util.HashMap;
