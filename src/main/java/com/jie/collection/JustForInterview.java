@@ -33,7 +33,7 @@ public class JustForInterview {
 		// node binary tree, parent-left-right
 		TreeMap<String, String> tm = new TreeMap<String, String>();
 		tm.put("Chen", "Jie");
-		printKV("HashMap", tm.entrySet().iterator());
+		printKV("TreeMap", tm.entrySet().iterator());
 		System.out.println("TreeMap Chen=" + tm.get("Chen"));
 
 		// ***************
