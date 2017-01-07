@@ -1,6 +1,6 @@
-package com.jie.inheritance;
+package com.jie.design;
 
-import com.jie.inheritance.MyOuter.MyInner1;
+import com.jie.design.MyOuter.MyInner1;
 
 public class MyOuterTest {
 

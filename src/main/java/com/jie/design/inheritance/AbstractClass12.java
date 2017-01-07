@@ -1,4 +1,4 @@
-package com.jie.inheritance;
+package com.jie.design.inheritance;
 
 //interface extends interface
 //interface AbstractClass12 implements Interface1 {}

@@ -1,4 +1,4 @@
-package com.jie.inheritance;
+package com.jie.design.inheritance;
 
 public interface Interface0 {
 	boolean m1 ();

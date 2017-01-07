@@ -1,4 +1,4 @@
-package com.jie.inheritance;
+package com.jie.design;
 
 public class MyOuter {
 

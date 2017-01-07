@@ -1,4 +1,4 @@
-package com.jie.inheritance;
+package com.jie.design.inheritance;
 
 //interface extends interface
 //interface Base2 implements Base {}
