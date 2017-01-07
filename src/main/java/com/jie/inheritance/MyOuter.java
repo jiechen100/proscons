@@ -1,8 +1,16 @@
-package com.jie.misc;
+package com.jie.inheritance;
 
-import com.jie.misc.MyOuter.MyInner1;
+public class MyOuter {
 
-public class MyOuterTest {
+	public static class MyInner1 {
+		public static void foo() {
+		}
+	}
+
+	public class MyInner2 {
+		public void foo() {
+		}
+	}
 
 	public static void main(String[] args) {
 		MyOuter.MyInner1 m = new MyOuter.MyInner1();
