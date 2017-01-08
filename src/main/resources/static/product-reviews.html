@@ -4,7 +4,7 @@
 	<li ng-repeat="review in product.reviews">
 		<blockquote>
 			<strong>{{review.stars}} Stars</strong> {{review.body}} <cite
-				class="clearfix">—{{review.author}}</cite>
+				class="clearfix"> by {{review.author}}</cite>
 		</blockquote>
 	</li>
 </ul>
@@ -16,7 +16,7 @@
 	<!--  Live Preview -->
 	<blockquote>
 		<strong>{{reviewCtrl.review.stars}} Stars</strong>
-		{{reviewCtrl.review.body}} <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
+		{{reviewCtrl.review.body}} <cite class="clearfix"> {{reviewCtrl.review.author}}</cite>
 	</blockquote>
 
 	<!--  Review Form -->

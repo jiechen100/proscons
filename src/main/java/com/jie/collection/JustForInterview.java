@@ -46,8 +46,8 @@ public class JustForInterview {
 		// faster than TreeSet
 		// not thread safe
 		HashSet<String> hs = new HashSet<String>();
-		hs.add("Chen");
 		hs.add("Jie");
+		hs.add("Chen");
 		print("HashSet", hs.iterator());
 		System.out.println("Hashtable Chen=" + hs.contains("Chen"));
 
@@ -57,6 +57,11 @@ public class JustForInterview {
 		// not thread safe
 		// fail-fast
 		TreeSet<String> ts = new TreeSet<>(hs);
+		ts.add("one");
+		ts.add("two");
+		ts.add("three");
+		ts.add("four");
+		ts.add("one");
 		print("TreeSet", ts.iterator());
 		System.out.println("TreeSet Chen=" + ts.contains("Chen"));
 
