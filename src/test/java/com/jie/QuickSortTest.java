@@ -11,6 +11,7 @@ public class QuickSortTest {
 
 	@Test
 	public void test() {
+
 		Random r = new Random();
 		int size = 20;
 		int[] sorted = new int[size];

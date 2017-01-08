@@ -45,7 +45,6 @@ public class JustForInterview {
 		// allow null
 		// faster than TreeSet
 		// not thread safe
-		// fail-fast
 		HashSet<String> hs = new HashSet<String>();
 		hs.add("Chen");
 		hs.add("Jie");
@@ -63,7 +62,6 @@ public class JustForInterview {
 
 		// thread safe
 		// not allow null key/value
-
 		ConcurrentHashMap<String, String> chm = new ConcurrentHashMap<String, String>();
 		chm.put("Chen", "Jie");
 		printKV("ConcurrentHashMap", chm.entrySet().iterator());
