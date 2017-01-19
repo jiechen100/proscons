@@ -7,10 +7,12 @@ public class OneProducerOneConsumer {
 
 	public static void main(String args[]) {
 		List<Integer> sharedQueue = new ArrayList<Integer>();
-		int size = 4;
+		int qSize = 10;
+
 		Thread prodThread = new Thread(new Producer("Producer", sharedQueue,
-				size));
+				qSize));
 		Thread consThread = new Thread(new Consumer("Consumer", sharedQueue));
+
 		prodThread.start();
 		consThread.start();
 	}
@@ -50,7 +52,7 @@ public class OneProducerOneConsumer {
 
 				Thread.sleep(1000);
 				taskQueue.add(i);
-				System.out.println("Produced: " + i);
+				System.out.println(name + " produced: " + i);
 				taskQueue.notifyAll();
 			}
 		}
@@ -87,7 +89,7 @@ public class OneProducerOneConsumer {
 				}
 				Thread.sleep(1000);
 				int i = (Integer) taskQueue.remove(0);
-				System.out.println("Consumed: " + i);
+				System.out.println(name + " consumed: " + i);
 				taskQueue.notifyAll();
 			}
 		}
