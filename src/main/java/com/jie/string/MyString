@@ -1,0 +1,18 @@
+public class MyString {
+    public static void main(String[] args) {
+        // StringBuilder (not thread safe, performance better)
+        // StringBuilder extends AbstractStringBuilder {char[] value=new char[capacity];} implements java.io.Serializable, CharSequence
+        StringBuilder sb = new StringBuilder(10); // default 16
+        sb.setLength(0); // Arrays.fill(value, count, newLength, '\0'); count=newSize
+        sb.append("xxx").toString();
+
+        // StringBuffer (meghod synchronized)
+        // StringBuffer extends AbstractStringBuilder {char[] value=new char[capacity];} implements java.io.Serializable, CharSequence
+        StringBuffer sBuffer = new StringBuffer(10);
+        sBuffer.setLength(0);
+        sBuffer.append("aaa").toString();
+
+        //this will create "ab", "abc"
+        String str = "a" + "b" + "c";
+    }
+}
