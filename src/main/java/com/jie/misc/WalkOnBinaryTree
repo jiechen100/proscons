@@ -1,0 +1,136 @@
+public class WalkOnBinaryTree {
+
+    public static void main(String[] args) {
+        String tree = "[3,[9],[20,[15],[7]]]";
+        BinaryTreeNode<String> root = createTree();
+        System.out.println("printLeftSelfRight -----");
+        printLeftSelfRight(root);
+        System.out.println();
+        System.out.println();
+
+        System.out.println("printSelfLeftRight -----");
+        printSelfLeftRight(root);
+        System.out.println();
+        System.out.println();
+
+        printLevelTopDown(root);
+        System.out.println();
+        printLevelBottomUp(root);
+        System.out.println();
+    }
+
+    static int maxHeight(BinaryTreeNode<String> node, int height) {
+        if (node == null) {
+            return height - 1;
+        }
+
+        return Math.max(maxHeight(node.getLeftNode(), height + 1), maxHeight(node.getRightNode(), height + 1));
+    }
+
+    static void printLevel(BinaryTreeNode<String> node, int level) {
+        if (node == null) {
+            return;
+        }
+
+        if (level == 1) {
+            System.out.print(node.getValue());
+            System.out.print(",");
+        } else {
+            printLevel(node.getLeftNode(), level - 1);
+            printLevel(node.getRightNode(), level - 1);
+        }
+    }
+
+    static void printLevelBottomUp(BinaryTreeNode<String> root) {
+        int height = maxHeight(root, 1);
+        System.out.println("printLevelBottomUp -----height=" + height);
+        for (int level = height; level >= 1; level--) {
+            printLevel(root, level);
+            System.out.println();
+        }
+    }
+
+    static void printLevelTopDown(BinaryTreeNode<String> root) {
+        int height = maxHeight(root, 1);
+        System.out.println("printLevelOrder -----height=" + height);
+        for (int level = 1; level <= height; level++) {
+            printLevel(root, level);
+            System.out.println();
+        }
+    }
+
+    static BinaryTreeNode<String> createTree() {
+        BinaryTreeNode<String> n = new BinaryTreeNode<String>("20", new BinaryTreeNode<String>("15"), new BinaryTreeNode<String>("7"));
+        BinaryTreeNode<String> root = new BinaryTreeNode<String>("3", new BinaryTreeNode<String>("9"), n);
+
+        return root;
+    }
+
+    static void printNodeValue(BinaryTreeNode<String> node) {
+        System.out.print((node == null || node.getValue() == null) ? "-" : node.getValue());
+        System.out.print(",");
+    }
+
+    static void printSelfLeftRight(BinaryTreeNode<String> node) {
+        if (node == null) {
+            return;
+        }
+
+        printNodeValue(node);
+        printSelfLeftRight(node.getLeftNode());
+        printSelfLeftRight(node.getRightNode());
+    }
+
+    static void printLeftSelfRight(BinaryTreeNode<String> node) {
+        if (node == null) {
+            return;
+        }
+
+        printLeftSelfRight(node.getLeftNode());
+        printNodeValue(node);
+        printLeftSelfRight(node.getRightNode());
+    }
+
+    public static class BinaryTreeNode<V> {
+        private V value;
+        private BinaryTreeNode<V> leftNode;
+        private BinaryTreeNode<V> rightNode;
+
+        public BinaryTreeNode(V value, BinaryTreeNode<V> leftNode, BinaryTreeNode<V> rightNode) {
+            this.value = value;
+            this.leftNode = leftNode;
+            this.rightNode = rightNode;
+        }
+
+        public BinaryTreeNode(V value) {
+            this.value = value;
+        }
+
+        public BinaryTreeNode<V> getLeftNode() {
+            return leftNode;
+        }
+
+        public void setLeftNode(BinaryTreeNode<V> leftNode) {
+            this.leftNode = leftNode;
+        }
+
+        public BinaryTreeNode<V> getRightNode() {
+            return rightNode;
+        }
+
+        public void setRightNode(BinaryTreeNode<V> rightNode) {
+            this.rightNode = rightNode;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return "BinaryTreeNode [value=" + value + ", leftNode=" + leftNode + ", rightNode=" + rightNode + "]";
+        }
+
+    }
+
+}
