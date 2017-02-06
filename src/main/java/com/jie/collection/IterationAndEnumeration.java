@@ -13,7 +13,7 @@ public class IterationAndEnumeration {
 
 	public static void main(String[] args) {
 		// All have iterator
-		// but Vecotr, Hashtable, ConcurrentHashMap have Enumeration
+		// but Vector, Hashtable, ConcurrentHashMap have Enumeration
 		
 		Object x;
 		x = new Vector().iterator();
