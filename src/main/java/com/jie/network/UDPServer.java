@@ -9,8 +9,10 @@ class UDPServer {
         byte[] sendData = new byte[1024];
 
         try {
+            serverSocket = new DatagramSocket(9876);
+
             while (true) {
-                serverSocket = new DatagramSocket(9876);
+
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 serverSocket.receive(receivePacket);
                 String sentence = new String(receivePacket.getData());
@@ -22,7 +24,7 @@ class UDPServer {
                 DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, ipAddress, port);
                 serverSocket.send(sendPacket);
             }
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
