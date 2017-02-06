@@ -14,7 +14,7 @@ public class JustForInterview {
 	public static void main(String[] args) {
 		// node table, linked list, hash(key)-key-value
 		// not thread safe
-		// all one null key, allow null values
+		// allow one null key, allow null values
 		// iterater fail-fast, throws java.util.ConcurrentModificationException
 		HashMap<String, String> hm = new HashMap<String, String>();
 		hm.put("Chen", "Jie");
@@ -23,7 +23,7 @@ public class JustForInterview {
 
 		// node table, linked list, hash(key)-key-value
 		// thread safe due to synchronized method
-		// not all null key/value
+		// not allow null key/value
 		// iterater not fail-fast
 		Hashtable<String, String> ht = new Hashtable<String, String>();
 		ht.put("Chen", "Jie");
