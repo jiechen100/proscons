@@ -1,0 +1,21 @@
+-- FULL OUTER JOIN or FULL JOIN, Return all rows when there is a match in ONE of the tables, A, AB, B => AB
+SELECT A.x, B.y, <list of columns> FROM A FULL JOIN B ON A.x=B.y;
+SELECT A.x, B.y, <list of columns> FROM A FULL OUTER JOIN B ON A.x=B.y;
+
+-- INNER JOIN: Returns all rows when there is at least one match in BOTH tables, A, AB, B => AB
+SELECT A.x, B.y, <list of columns> FROM A INNER JOIN B ON A.x=B.y;
+
+-- LEFT JOIN/LEFT OUTER JOIN: Return all rows from the left table, and the matched rows from the right table, A, AB, B => A, AB
+SELECT A.x, B.y, <list of columns> FROM A LEFT JOIN B ON A.x=B.y;
+SELECT A.x, B.y, <list of columns> FROM A LEFT OUTER JOIN B ON A.x=B.y;
+
+-- RIGHT JOIN/RIGHT OUTER JOIN: Return all rows from the right table, and the matched rows from the left table, A, AB, B => AB, B
+SELECT A.x, B.y, <list of columns> FROM A RIGHT JOIN B ON A.x=B.y;
+SELECT A.x, B.y, <list of columns> FROM A RIGHT OUTER JOIN B ON A.x=B.y;
+
+-- use where 
+-- A, AB, B => A
+SELECT A.x, B.y, <list of columns> FROM A LEFT OUTER JOIN B ON A.x=B.y WHERE B.y IS NULL
+
+-- A, AB, B => B
+SELECT A.x, B.y, <list of columns> FROM A RIGHT OUTER JOIN B ON A.x=B.y WHERE A.y IS NULL
